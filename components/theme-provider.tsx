@@ -47,7 +47,10 @@ function ThemeHotkey() {
         return
       }
 
-      if (event.key.toLowerCase() !== "d") {
+      // কিছু সিনথেটিক/মোবাইল event-এ key থাকে না — undefined হলে safely skip
+      const key = event.key?.toLowerCase()
+
+      if (key !== "d") {
         return
       }
 
